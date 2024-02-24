@@ -12,7 +12,7 @@ namespace TransactionOrder.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class TransactionOrderController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
@@ -21,9 +21,9 @@ namespace TransactionOrder.Controllers
 
         private readonly ApplicationDbContext _dbContext;
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<TransactionOrderController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, ApplicationDbContext dbContext)
+        public TransactionOrderController(ILogger<TransactionOrderController> logger, ApplicationDbContext dbContext)
         {
             _logger = logger;
             _dbContext = dbContext;
