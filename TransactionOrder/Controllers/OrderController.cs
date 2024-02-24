@@ -64,7 +64,7 @@ namespace TransactionOrder.Controllers
                     Category = input.Category,
                     qty = input.qty,
                     Price = input.Price,
-                    Total = input.Total,
+                    Total = input.Price * 2,
                     ProductImage = input.ProductImage
                 };
 
@@ -83,7 +83,7 @@ namespace TransactionOrder.Controllers
                 Category = x.Category,
                 qty=x.qty,
                 Price = x.Price,
-                Total = x.Price * 2,
+                Total = x.Total,
                 ProductImage = x.ProductImage
             }).ToList();                                  
         }
