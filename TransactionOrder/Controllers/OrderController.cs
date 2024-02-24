@@ -83,7 +83,7 @@ namespace TransactionOrder.Controllers
                 Category = x.Category,
                 qty=x.qty,
                 Price = x.Price,
-                Total = x.Total,
+                Total = x.Price * 2,
                 ProductImage = x.ProductImage
             }).ToList();                                  
         }
