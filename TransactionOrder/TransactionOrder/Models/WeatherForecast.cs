@@ -1,6 +1,6 @@
 using System;
 
-namespace TransactionOrder
+namespace TransactionOrder.TransactionOrder.Models
 {
     public class WeatherForecast
     {

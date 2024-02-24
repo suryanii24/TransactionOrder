@@ -4,6 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TransactionOrder.Entities;
+using TransactionOrder.TransactionOrder.Input;
+using TransactionOrder.TransactionOrder.Models;
 
 namespace TransactionOrder.Controllers
 {
@@ -16,11 +19,42 @@ namespace TransactionOrder.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
+        private readonly ApplicationDbContext _dbContext;
+
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, ApplicationDbContext dbContext)
         {
             _logger = logger;
+            _dbContext = dbContext;
+        }
+
+        [HttpPost("masterproduct")]
+        public async Task<Product> CreateProduct(CreateProductInput input)
+        {
+            var data = _dbContext.Product.FirstOrDefault(x => x.ProductName == input.ProductName);
+            if (data == null)
+            {
+                var Product = new Product
+                {
+                    ProductName = input.ProductName,
+                    Price = input.Price,
+                    CategoryId = Int32.Parse(input.Category),
+                    Stock = input.Stock,
+                    ProductImage = input.UploadImage,
+                };
+
+                await _dbContext.Product.AddAsync(Product);
+                await _dbContext.SaveChangesAsync();
+
+                Console.WriteLine("Product saved to the database.");
+            }
+
+            else
+            {
+                Console.WriteLine("Product already exists in the database.");
+            }
+            return data;
         }
 
         [HttpGet]

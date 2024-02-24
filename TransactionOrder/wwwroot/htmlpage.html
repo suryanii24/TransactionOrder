@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TransactionOrder</title>
+</head>
+<body>
+    <h1>Product</h1>
+
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <a href="#category">Category</a>
+        <a href="#product">Pproduct</a>
+        <a href="#order">Order</a>
+        <a href="#historyorder">History Order</a>
+        <a href="#logout">Logout</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="container">
+        <form action="action_page.php">
+            <div class="row">
+                <div class="col-25">
+                    <label for="pname">Product Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="fname" name="Productname" placeholder="prodect name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="price">Price</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="price" name="price" placeholder=" price..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="category">Category</label>
+                </div>
+                <div class="col-75">
+                    <select id="category" name="category">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="stock">Stock</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="stock" name="stock" placeholder="Write something.." style="height:200px"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <input type="save" value="Save">
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <h1>Order</h1>
+        <form action="/action_page.php">
+            <label for="fname">Transaction ID:</label>
+            <input type="text" id="fname" name="fname" disabled><br><br>
+            <label for="tname">Transaction Name:</label>
+            <input type="text" id="tname" name="tname" disabled><br><br>
+            <label for="cname">Cashier Name:</label>
+            <input type="text" id="cname" name="cname" disabled><br><br>
+            <input type="submit" value="Submit">
+        </form>
+        <table style='border: 2px #0d0c0c solid; width: 50%' align='center' border='2'>
+            <tbody>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th>QTY</th>
+                    <th>Price</th>
+                    <th>Product Image</th>
+                    <th>Total</th>
+                    <th>Action</th>
+
+                </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h1>History Order</h1>
+        <form action="/action_page.php">
+            <label for="myDateTime">Start Date:</label>
+            <input type='date' name='myDateTime'>
+            <label for="myDateTime">End Date:</label>
+            <input type='date' name='myDateTime'>
+            <input type="submit" value="Submit">
+        </form>
+
+        <table style='border: 2px #0d0c0c solid; width: 50%' align='center' border='2'>
+            <tbody>
+                <tr>
+                    <th>Transactio ID</th>
+                    <th>Transaction Date</th>
+                    <th>Cashier Name</th>
+                    <th>Total Amount</th>
+                   
+
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                   
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                   
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    
+</body>
+</html>
